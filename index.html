@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title> Cascata,Especificidade,Combinadores, Box model e Displey </title>
+</head>
+<body>
+    <div>
+        <h1>Cascata,Especificidade,Combinadores,Box model e Display</h1>
+
+        <p>No CSS, a cascata é o mecanismo que define qual regra de estilo será aplicada quando várias forem direcionadas ao mesmo elemento. Ela considera a origem do estilo, a especificidade do seletor e a ordem em que as regras aparecem. A especificidade é a "força" de um seletor, sendo que seletores de ID têm mais peso que classes, que por sua vez têm mais peso que seletores de elementos.
+
+Para tornar os seletores mais precisos, usamos os combinadores, que definem relações entre elementos. Por exemplo, o espaço ( ) seleciona descendentes, o sinal > seleciona filhos diretos, + seleciona o irmão seguinte, e ~ seleciona todos os irmãos posteriores.
+
+Todo elemento HTML é estruturado segundo o Box Model, composto por quatro partes: conteúdo, padding (espaço interno), border (borda) e margin (espaço externo). Esse modelo define o tamanho e o espaçamento dos elementos na página.
+
+Por fim, a propriedade display determina como o elemento se comporta no layout. Os valores mais comuns são block, inline, inline-block, flex, grid e none. Cada um altera a forma como o elemento ocupa espaço e se relaciona com os demais na página.</p>
+
+<h2>Como funciona a regra da cascata no CSS?</h2>
+
+<p>A regra da cascata no CSS define qual estilo será aplicado quando há conflito entre várias regras. Ela considera três fatores principais: especificidade (quanto mais específico o seletor, maior sua prioridade), origem do estilo (por exemplo, inline é mais forte que CSS externo), e a ordem em que as regras aparecem (a última pode sobrepor as anteriores). Além disso, o uso de !important força uma regra a ter prioridade máxima, independentemente dos outros critérios.</p>
+
+<h2>O que é especificidade e qual a diferença entre a especificidade do seletor pela tag, seletor pela classe e seletor pelo id?</h2>
+
+<p>A especificidade define qual seletor tem mais prioridade quando há conflito de estilos. Seletores por tag (como p) têm a menor prioridade, seletores por classe (como .classe) têm mais peso, e seletores por ID (como #id) têm a maior prioridade entre eles. Assim, quanto mais específico o seletor, maior a chance dele "vencer" e ter seu estilo aplicado.</p>
+
+<h2>Explicação dascombinação de seletores, mostrando a combinação com espaço </h2>
+
+<p>No CSS, podemos combinar seletores para indicar relações entre elementos:</p>
+<ul>
+    <li>Espaço (.primeira h1): seleciona todo h1 dentro de .primeira, em qualquer nível.</li>
+    <li>Filho direto (.primeira > h1): seleciona apenas o h1 que é filho imediato de .primeira.</li>
+    <li>Irmão adjacente (.primeira h1 + h1): seleciona o h1 que vem logo depois de outro h1 dentro de .primeira.</li>
+</ul>
+
+<h2>Explicação do funcionamento das pseudo-classes: first-child, last-child, nth-child, nth-of-type</h2>
+
+<p>As pseudo-classes permitem aplicar estilos com base na posição dos elementos.</p>
+<ul>
+    <li>**first-child**: seleciona o primeiro filho de um pai.</li>
+    <li>**last-child**: seleciona o último filho de um pai.</li>
+    <li>**nth-child(n)**: seleciona o filho na posição n, contando todos os tipos de elementos.</li>
+    <li>**nth-of-type(n)**: seleciona o filho na posição n, mas somente entre os elementos do mesmo tipo (ex: apenas p ou li).</li>
+</ul>
+
+    <h2> Diferenças entre display inline e display block.</h2>
+
+    <p>display: inline faz o elemento ocupar só o espaço do conteúdo, permitindo que fique na mesma linha com outros elementos. Não aceita width, height, margin-top e margin-bottom (essas propriedades geralmente não funcionam).
+
+display: block faz o elemento ocupar toda a largura disponível, começando em uma nova linha. Aceita width, height, margin e padding em todas as direções normalmente.</p>
+
+<h2>Elementos padrões display inline e quais são display block.</h2>
+
+<p>Elementos com display inline padrão incluem:
+span,a,strong,em,img,input,label,button.</p>
+<p>
+Elementos com display block padrão incluem:
+div,p,h1 a h6,ul,ol,li,section,header,footer,form.</p> 
+
+<h2>Uso de margin, padding e border + shorthand e sufixos (block, inline, top, bottom, left, right)</h2>
+
+<p>Margin é o espaço fora da borda do elemento;
+Padding é o espaço dentro, entre borda e conteúdo;
+Border é a borda em si.</p>
+
+<ul>
+    <li>1 valor = todos os lados iguais,</li>
+    <li>2 valores = vertical | horizontal,</li>
+    <li>3 valores = top | horizontal | bottom,</li>
+    <li>4 valores = top | right | bottom | left.</li>
+</ul>
+
+<p>Também existem propriedades específicas para cada lado (-top, -bottom, -left, -right) e para eixos (-block para vertical e -inline para horizontal).</p>
+
+<h2>A utilização da propriedade box-sizing: border-box</h2>
+<p>box-sizing: border-box faz com que o padding e a border sejam incluídos dentro da largura e altura definidas do elemento, evitando que o tamanho total aumente além do especificado.</p>
+
+</div>
+</body>
+</html>
